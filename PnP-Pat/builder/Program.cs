@@ -2,7 +2,7 @@
 
 namespace Ventus
 {
-    class Program
+    internal class Program
     {
         public static void Main()
         {

@@ -1,4 +1,4 @@
-﻿namespace singleton
+﻿namespace Ventus
 {
     partial class RegularForm
     {

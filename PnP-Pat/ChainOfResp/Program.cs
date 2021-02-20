@@ -1,8 +1,8 @@
 ﻿namespace Ventus
 {
-    static class Program
+    internal static class Program
     {
-        static void Main()
+        private static void Main()
         {
             IHandler handler = new PlainFileHandler();
             handler = new AspHandler { Successor = handler };

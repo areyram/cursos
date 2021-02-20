@@ -2,7 +2,7 @@
 
 namespace Ventus
 {
-    class PlainFileHandler : IHandler
+    internal class PlainFileHandler : IHandler
     {
         public IHandler Successor { get; set; }
 

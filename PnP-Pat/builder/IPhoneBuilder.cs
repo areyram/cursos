@@ -1,6 +1,6 @@
 ﻿namespace Ventus
 {
-    interface IPhoneBuilder
+    internal interface IPhoneBuilder
     {
         void BuildScreen();
         void BuildBattery();

@@ -1,6 +1,6 @@
 namespace Ventus
 {
-    class AndroidPhoneBuilder : IPhoneBuilder
+    internal class AndroidPhoneBuilder : IPhoneBuilder
     {
         public MobilePhone Phone { get; private set; }
 

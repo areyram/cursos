@@ -1,4 +1,4 @@
-﻿namespace MainProgram
+﻿namespace Ventus
 {
     internal class PluginRecord
     {

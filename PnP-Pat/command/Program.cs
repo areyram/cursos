@@ -5,9 +5,9 @@ using System.Data.SqlClient;
 
 namespace command
 {
-    class Program
+    internal class Program
     {
-        static void Main()
+        private static void Main()
         {
             Test();
         }

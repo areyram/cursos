@@ -1,11 +1,10 @@
 ﻿using System;
 using System.IO;
 using System.Reflection;
-using Ventus;
 
-namespace MainProgram
+namespace Ventus
 {
-    class Program
+    internal class Program
     {
         const string TestString = " This is a test    With words  ";
 

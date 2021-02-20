@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Threading;
 
-namespace ProducerConsumer
+namespace Ventus
 {
-    class Program
+    internal class Program
     {
         private static readonly Queue<int> queue = new Queue<int>();
 
-        static void Main()
+        private static void Main()
         {
             const int consumerThreads = 4;
 

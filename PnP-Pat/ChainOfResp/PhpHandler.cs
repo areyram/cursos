@@ -3,7 +3,7 @@ using System.IO;
 
 namespace Ventus
 {
-    class PhpHandler : IHandler
+    internal class PhpHandler : IHandler
     {
         public IHandler Successor { get; set; }
 

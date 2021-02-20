@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace singleton
+namespace Ventus
 {
     public partial class MainForm : Form
     {

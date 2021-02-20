@@ -7,18 +7,11 @@ namespace sample
     {
         private static void Main()
         {
-            Test0();
             Test1();
             Test2();
             Test3();
         }
-
-        private static void Test0()
-        {
-            //TODO:
-            throw new NotImplementedException();
-        }
-
+        
         private static void Test1()
         {
             var values = new[] { 1, 2, 3, 4, 5 };

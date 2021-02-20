@@ -3,7 +3,7 @@ using System.IO;
 
 namespace Ventus
 {
-    class AspNetHandler : IHandler
+    internal class AspNetHandler : IHandler
     {
         public IHandler Successor { get; set; }
 
