@@ -6,7 +6,12 @@ namespace Ventus
     {
         public int Compare(int x, int y)
         {
-            return y.CompareTo(x);
+            //return y.CompareTo(x);
+            if (x == y)
+                return 0;
+            if (x < y)
+                return 1;
+            return -1;
         }
     }
 }
