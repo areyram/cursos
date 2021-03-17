@@ -37,23 +37,24 @@ namespace HardCoding
         }
 
         //YES
+        
         private static void Test1B(bool ivaIncluido)
         {
             var monto = 1000m;
             decimal total;
             decimal subtotal;
             decimal iva;
-            var pIva = Settings.Default.PercentIva;
+            var percentIva = Settings.Default.PercentIva;
             if (ivaIncluido)
             {
                 total = monto;
-                subtotal = monto / (1 + pIva);
+                subtotal = monto / (1 + percentIva);
                 iva = total - subtotal;
             }
             else
             {
                 subtotal = monto;
-                iva = subtotal * pIva;
+                iva = subtotal * percentIva;
                 total = subtotal + iva;
             }
             Console.WriteLine($"{subtotal:C} + {iva:C} = {total:C}");

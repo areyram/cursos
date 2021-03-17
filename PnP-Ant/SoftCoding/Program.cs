@@ -53,6 +53,18 @@ namespace SoftCoding
                 Bas = 321
             };
             Console.WriteLine(fields.Foo > 0 ? fields.Foo : fields.Bas);
+
+
+            var a = true; var b = true; var c = true; var d = true;
+            if (a)
+            {
+                if ((b || c) & !d)
+                {
+                    //TODO
+                }
+            }
         }
+
+
     }
 }

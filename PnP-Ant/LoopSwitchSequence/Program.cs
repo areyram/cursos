@@ -12,6 +12,7 @@ namespace LoopSwitchSequence
             Test1C();
         }
 
+        //NO
         private static void Test1A()
         {
             if (!Step1())
