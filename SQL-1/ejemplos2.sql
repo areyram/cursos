@@ -1,32 +1,30 @@
-select * from [Order Details]
+SELECT *
+FROM [Order Details]
 
-create table Featured
-(
-	ID int
-)
+CREATE TABLE Featured ( ID int )
 
-insert into featured values (41)
-insert into featured values (51)
-insert into featured values (65)
-insert into featured values (22)
-insert into featured values (57)
+INSERT INTO featured values (41)
+INSERT INTO featured values (51)
+INSERT INTO featured values (65)
+INSERT INTO featured values (22)
+INSERT INTO featured values (57)
 
-select * from featured
+SELECT *
+FROM featured
 
-select d.*
-from [Order Details] d
-inner join Featured f on d.ProductID = f.ID
+SELECT d.*
+FROM [Order Details] d
+INNER JOIN Featured f ON d.ProductID = f.ID
 
-select c.*
-from Customers c
-where c.CustomerID not in (select CustomerID from orders)
+SELECT c.*
+FROM Customers c
+WHERE c.CustomerID NOT IN (SELECT CustomerID FROM orders) -- no coincidentes 
 
--- no coincidentes
-select c.*
-from Customers c
-left join Orders o ON c.CustomerID = o.CustomerID
-where o.CustomerID IS NULL
+SELECT  c.*
+FROM Customers c
+LEFT JOIN Orders o ON c.CustomerID = o.CustomerID
+WHERE o.CustomerID IS NULL 
 
-select o.OrderID, c.CompanyName
-from Orders o
-inner join Customers c ON o.CustomerID = c.CustomerID
+SELECT  o.OrderID, c.CompanyName
+FROM Orders o
+INNER JOIN Customers c ON o.CustomerID = c.CustomerID

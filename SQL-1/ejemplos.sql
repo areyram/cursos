@@ -1,62 +1,69 @@
-select * from Products
+SELECT *
+FROM products
 
-select * from [Order Details]
+SELECT *
+FROM [Order Details]
 
-select 'P' + CONVERT(varchar, ProductID) from Products
+SELECT 'P' + CONVERT(VARCHAR, productid)
+FROM products
 
-select 100 + 20 * 2
-select (100 + 20) * 2
+SELECT 100 + 20 * 2
+SELECT (100 + 20) * 2
 
-select ProductID, ProductName, UnitPrice
-from Products
-WHERE ProductName LIKE 'G%'
-AND UnitPrice < 10
+SELECT productid, productname, unitprice
+FROM products
+WHERE productname LIKE 'G%' AND unitprice < 10
 
-select ProductID, ProductName, UnitPrice
-from Products
-where (UnitPrice < 20 AND ProductName LIKE 'C%')
-OR (ProductName LIKE 'G%' AND UnitPrice < 10)
+SELECT productid, productname, unitprice
+FROM products
+WHERE (unitprice < 20 AND productname LIKE 'C%')
+	OR (productname LIKE 'G%' AND unitprice < 10)
 
-select ProductID, ProductName, UnitPrice
-from Products
-where UnitPrice < 20
-AND (ProductName LIKE 'C%' OR ProductName LIKE 'G%')
+SELECT productid, productname, unitprice
+FROM products
+WHERE unitprice < 20
+	AND (productname LIKE 'C%' OR productname LIKE 'G%')
 
-select GETDATE()
+SELECT GETDATE()
 
-select DATEADD(d, 1, GETDATE())
-select DATEADD(MONTH, 1, GETDATE())
-select DATEADD(d, -1, GETDATE())
+SELECT DATEADD(d, 1, GETDATE())
 
-select DATEDIFF(d, '2000-10-20', '2000-11-20')
-select DATEDIFF(YEAR, '2000-01-03', GETDATE())
+SELECT DATEADD(MONTH, 1, GETDATE())
 
-select DATEPART(DAYOFYEAR, getdate())
+SELECT DATEADD(d, -1, GETDATE())
 
-select CONVERT(float, '123') * 2
+SELECT DATEDIFF(d, '2000-10-20', '2000-11-20')
 
-select OrderID,
-		CASE ShipCountry
+SELECT DATEDIFF(YEAR, '2000-01-03', GETDATE())
+
+SELECT DATEPART(DAYOFYEAR, GETDATE())
+
+SELECT CONVERT(FLOAT, '123') * 2
+
+SELECT orderid,
+	CASE
+		shipcountry
 		WHEN 'Mexico' THEN 'Nacional'
 		ELSE 'Internacional'
-		END
-from Orders
+	END
+FROM orders
 
-select OrderID,
-		CASE
-		WHEN ShipCountry = 'Mexico' THEN 'Nacional'
+SELECT orderid,
+	CASE
+		WHEN shipcountry = 'Mexico' THEN 'Nacional'
 		ELSE 'Internacional'
-		END
-from Orders
+	END
+FROM orders
 
-select OrderID,
-		CASE WHEN ShipRegion IS NULL THEN 'N/A' ELSE ShipRegion END
-from Orders
+SELECT orderid,
+	CASE
+		WHEN shipregion IS NULL THEN 'N/A'
+		ELSE shipregion
+	END
+FROM orders
 
-select OrderID,
-		COALESCE(ShipRegion, 'N/A')
-from Orders
+SELECT orderid, COALESCE(shipregion, 'N/A')
+FROM orders
 
-select OrderID,
-		ISNULL(ShipRegion, 'N/A')
-from Orders
+SELECT orderid, ISNULL(shipregion, 'N/A')
+FROM orders

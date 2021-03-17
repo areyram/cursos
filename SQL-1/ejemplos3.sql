@@ -1,44 +1,48 @@
-select	o.OrderID, MIN(o.OrderDate) AS OrderDate,
-		SUM(d.UnitPrice * d.Quantity) as TotalAmount
-from Orders o
-inner join [Order Details] d ON o.OrderID = d.OrderID
-group by o.OrderID
+SELECT o.orderid,
+       MIN(o.orderdate) AS orderdate,
+       SUM(d.unitprice * d.quantity) AS totalamount
+FROM orders o
+     INNER JOIN [Order Details] d ON o.orderid = d.orderid
+GROUP BY o.orderid
 
-select distinct OrderID
-from [Order Details]
+SELECT DISTINCT orderid
+FROM [Order Details]
 
-select OrderID
-from [Order Details]
-group by OrderID
+SELECT orderid
+FROM [Order Details]
+GROUP BY orderid
 
-select TOP 10
-		d.ProductID,
-		MIN(p.ProductName),
-		SUM(d.UnitPrice * d.Quantity * (1 - d.Discount)) AS Amount
-from Orders o
-inner join [Order Details] d ON o.OrderID = d.OrderID
-inner join Products p ON d.ProductID = p.ProductID
-where YEAR(o.OrderDate) = 1997
-group by d.ProductID
-order by Amount DESC
+SELECT TOP 10 d.productid,
+       MIN(p.productname),
+       SUM(d.unitprice * d.quantity *( 1 - d.discount )) AS amount
+FROM orders o
+     INNER JOIN [Order Details] d ON o.orderid = d.orderid
+     INNER JOIN products p ON d.productid = p.productid
+WHERE YEAR ( o.orderdate ) = 1997
+GROUP BY d.productid
+ORDER BY amount DESC
 
-select count(*) from Customers
+SELECT COUNT(*)
+FROM customers
 
-select count(distinct CustomerID) from Orders
+SELECT COUNT(DISTINCT customerid)
+FROM orders
 
-select distinct count(CustomerID) from Orders
+SELECT DISTINCT COUNT(customerid)
+FROM orders
 
--- select count(*)
--- from Orders
--- where count(*) > 10
--- group by CustomerID
+-- SELECT COUNT（*）
+-- FROM Orders
+-- WHERE COUNT（*） > 10
+-- GROUP BY  CustomerID
 
-select CustomerID
-from Orders
-group by CustomerID
-having count(*) > 10
+SELECT customerid
+FROM orders
 
-select CustomerID
-from Customers
-group by CustomerID
-having count(*) > 1
+GROUP BY customerid
+HAVING COUNT(*) > 10
+
+SELECT customerid
+FROM customers
+GROUP BY customerid
+HAVING COUNT(*) > 1
