@@ -28,7 +28,7 @@ FROM customers
 SELECT COUNT(DISTINCT customerid)
 FROM orders
 
-SELECT DISTINCT COUNT(customerid)
+SELECT DISTINCT COUNT(customerid)  -- cuidado con este
 FROM orders
 
 -- SELECT COUNT（*）
@@ -42,6 +42,7 @@ FROM orders
 GROUP BY customerid
 HAVING COUNT(*) > 10
 
+-- duplicados
 SELECT customerid
 FROM customers
 GROUP BY customerid
