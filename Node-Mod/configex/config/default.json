@@ -1,0 +1,7 @@
+{
+    "connect": {
+        "server": "localhost",
+        "user": "root",
+        "pass": "admin"
+    }
+}

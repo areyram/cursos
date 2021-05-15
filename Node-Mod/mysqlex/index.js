@@ -4,6 +4,7 @@ const conn = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "admin",
+    database: "test",
 });
 
 conn.connect(function (err) {
@@ -12,4 +13,5 @@ conn.connect(function (err) {
         if (err) throw err;
         console.log("Result: " + result);
     });
+    conn.end();
 });
