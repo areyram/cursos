@@ -1,0 +1,13 @@
+<button (click)="add()"> + </button>
+<button (click)="del()"> - </button>
+<br />
+<table class="grid" *ngIf="nums.length != 0">
+  <tbody>
+    <tr *ngFor="let o of nums">
+      <td>{{ o }}</td>
+    </tr>
+  </tbody>
+</table>
+<p *ngIf="nums.length == 0">
+    No data
+</p>
