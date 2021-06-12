@@ -1,0 +1,22 @@
+div {
+    width: 200px;
+    height: 150px;
+    border: solid 1px cornflowerblue;
+    margin-bottom: 20px;
+}
+
+.text1 {
+    white-space: normal;
+}
+
+.text2 {
+    white-space: nowrap;
+}
+
+.text3 {
+    white-space: pre;
+}
+
+.text4 {
+    white-space: pre-wrap;
+}
